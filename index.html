@@ -10,18 +10,21 @@
 
         * {
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             margin: 0;
             background:
-                radial-gradient(circle at top, #191914 0%, #0b0b0f 55%);
+                radial-gradient(circle at 50% 0%, #1d1b14 0%, #0b0b0f 48%, #07070a 100%);
             color: #e8e8e8;
             font-family: Georgia, "Times New Roman", serif;
             line-height: 1.6;
         }
 
-        /* GOLDEN FRAME */
+        /* =========================================
+           MAIN GOLDEN FRAME
+           ========================================= */
 
         .outer-frame {
             max-width: 1050px;
@@ -29,9 +32,13 @@
             padding: 8px;
             border: 1px solid #9d8750;
             background: #0b0b0f;
+            box-shadow:
+                0 0 35px rgba(157, 135, 80, 0.12),
+                0 0 80px rgba(157, 135, 80, 0.05);
         }
 
         .inner-frame {
+            position: relative;
             border: 1px solid #554a2f;
             padding: 60px 45px;
         }
@@ -41,19 +48,54 @@
             margin: auto;
         }
 
-        /* HEADER */
+        /* =========================================
+           HEADER
+           ========================================= */
 
         header {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 55px;
         }
 
         .eyebrow {
             color: #c8b477;
-            font-size: 0.85rem;
-            letter-spacing: 4px;
+            font-size: 0.8rem;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+        }
+
+        /* Small ornamental symbol */
+
+        .sigil {
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 25px auto;
+            border: 1px solid #9d8750;
+            transform: rotate(45deg);
+            position: relative;
+            opacity: 0.8;
+        }
+
+        .sigil::before,
+        .sigil::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #9d8750;
+        }
+
+        .sigil::before {
+            width: 26px;
+            height: 26px;
+        }
+
+        .sigil::after {
+            width: 8px;
+            height: 8px;
+            background: #9d8750;
         }
 
         h1 {
@@ -67,19 +109,59 @@
         .subtitle {
             color: #aaa;
             font-size: 1.15rem;
+            letter-spacing: 1px;
         }
 
         .intro {
             max-width: 720px;
-            margin: 0 auto 70px auto;
+            margin: 0 auto 40px auto;
             text-align: center;
             color: #999;
         }
 
-        /* CATEGORIES */
+        /* =========================================
+           CATEGORY NAVIGATION
+           ========================================= */
+
+        .navigation {
+            text-align: center;
+            margin: 35px auto 70px auto;
+            padding: 22px 15px;
+            border-top: 1px solid #554a2f;
+            border-bottom: 1px solid #554a2f;
+        }
+
+        .navigation-title {
+            color: #777;
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .navigation a {
+            color: #c8b477;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .navigation a:hover {
+            opacity: 0.55;
+        }
+
+        .nav-separator {
+            color: #554a2f;
+            margin: 0 9px;
+        }
+
+        /* =========================================
+           CATEGORY
+           ========================================= */
 
         .category {
-            margin-bottom: 65px;
+            margin-bottom: 70px;
+            scroll-margin-top: 25px;
         }
 
         .category-title {
@@ -88,25 +170,60 @@
             font-size: 1.45rem;
             font-weight: normal;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
+
+        /* Ornamental divider */
 
         .category-line {
-            width: 90px;
-            height: 1px;
-            background: #9d8750;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0 auto 30px auto;
+            color: #9d8750;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
         }
 
-        /* TRACKS */
+        .category-line::before,
+        .category-line::after {
+            content: "";
+            width: 75px;
+            height: 1px;
+            background: #9d8750;
+        }
+
+        .category-line::before {
+            margin-right: 12px;
+        }
+
+        .category-line::after {
+            margin-left: 12px;
+        }
+
+        .category-line::after {
+            box-shadow: none;
+        }
+
+        /* =========================================
+           TRACKS
+           ========================================= */
 
         .track {
             padding: 20px 5px;
             border-bottom: 1px solid #29292f;
+            transition:
+                padding-left 0.2s,
+                background 0.2s;
         }
 
         .track:first-of-type {
             border-top: 1px solid #29292f;
+        }
+
+        .track:hover {
+            padding-left: 12px;
+            background: rgba(157, 135, 80, 0.025);
         }
 
         .track-title {
@@ -130,21 +247,59 @@
         }
 
         .listen:hover {
-            opacity: 0.65;
+            opacity: 0.6;
         }
 
-        /* FOOTER */
+        /* =========================================
+           RETURN TO TOP
+           ========================================= */
+
+        .back-top {
+            display: table;
+            margin: 5px auto 0 auto;
+            padding: 9px 18px;
+            border: 1px solid #554a2f;
+            color: #c8b477;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition:
+                background 0.2s,
+                border-color 0.2s;
+        }
+
+        .back-top:hover {
+            background: rgba(157, 135, 80, 0.08);
+            border-color: #9d8750;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
 
         footer {
-            margin-top: 75px;
-            padding-top: 30px;
+            margin-top: 70px;
+            padding-top: 35px;
             border-top: 1px solid #554a2f;
             text-align: center;
             color: #666;
             font-size: 0.85rem;
         }
 
-        /* MOBILE */
+        footer .ornament {
+            color: #9d8750;
+            letter-spacing: 7px;
+            margin-bottom: 20px;
+        }
+
+        footer strong {
+            color: #888;
+            font-weight: normal;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
 
         @media (max-width: 600px) {
 
@@ -158,27 +313,43 @@
             }
 
             header {
-                margin-bottom: 50px;
+                margin-bottom: 45px;
+            }
+
+            .navigation {
+                line-height: 2.2;
+            }
+
+            .nav-separator {
+                margin: 0 4px;
             }
 
             .category {
-                margin-bottom: 50px;
+                margin-bottom: 55px;
+            }
+
+            .category-line::before,
+            .category-line::after {
+                width: 45px;
             }
 
             .track {
                 padding: 18px 0;
             }
+
+            .track:hover {
+                padding-left: 5px;
+            }
+
         }
 
     </style>
 </head>
 
-<body>
+<body id="top">
 
 <div class="outer-frame">
-
 <div class="inner-frame">
-
 <div class="container">
 
 
@@ -187,6 +358,8 @@
 <!-- ================================================= -->
 
 <header>
+
+    <div class="sigil"></div>
 
     <div class="eyebrow">
         Music Archive
@@ -212,14 +385,43 @@
 
 
 <!-- ================================================= -->
+<!-- CATEGORY NAVIGATION -->
+<!-- ================================================= -->
+
+<nav class="navigation">
+
+    <div class="navigation-title">
+        Browse the Archive
+    </div>
+
+    <a href="#hoyomix">HOYO-MiX</a>
+    <span class="nav-separator">◆</span>
+
+    <a href="#scott-buckley">Scott Buckley</a>
+    <span class="nav-separator">◆</span>
+
+    <a href="#shoi-miyazawa">Shoi Miyazawa</a>
+    <span class="nav-separator">◆</span>
+
+    <a href="#hollow-knight">Hollow Knight</a>
+    <span class="nav-separator">◆</span>
+
+    <a href="#ori">Ori</a>
+    <span class="nav-separator">◆</span>
+
+    <a href="#other">Other</a>
+
+</nav>
+
+
+<!-- ================================================= -->
 <!-- HOYO-MIX -->
 <!-- ================================================= -->
 
-<section class="category">
+<section class="category" id="hoyomix">
 
     <h2 class="category-title">HOYO-MiX</h2>
-
-    <div class="category-line"></div>
+    <div class="category-line">◇</div>
 
 
     <div class="track">
@@ -228,13 +430,11 @@
         <a class="listen" href="https://youtu.be/-b6RXRYZBLw?list=RD-b6RXRYZBLw" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Sorrows Calmed</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/3jcZqKS-UQ4?list=OLAK5uy_l4YePCFW_2xSakmZ6MpdK9sso5GrsW9Rc" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Nameless Faces (Instrumental)</div>
@@ -242,13 +442,11 @@
         <a class="listen" href="https://youtu.be/Fkf6a9raDJI?list=RDFkf6a9raDJI" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">A Dream Within a Dream</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/FFjJLrxxf8Q?list=OLAK5uy_lfYJPCp4k-rGN2QekLqLE1L5HkKerEFCM" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Crescent Gildeth the Dark</div>
@@ -256,13 +454,11 @@
         <a class="listen" href="https://youtu.be/MQXYgjjYctE?list=OLAK5uy_lfYJPCp4k-rGN2QekLqLE1L5HkKerEFCM" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">The Looming Curtains</div>
         <div class="artist">HOYO-MiX · 汪玉珏</div>
         <a class="listen" href="https://youtu.be/slni3RrdbC8?list=OLAK5uy_nxkWRWXXOgOZ4TguAr0s6rU9OrjrdrlNc" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">The Realm of Tokoyo</div>
@@ -270,13 +466,11 @@
         <a class="listen" href="https://youtu.be/biPnQ11tHAs?list=OLAK5uy_mf8R0L8phKCeJ7Bl7XsXcMTOfKaceJ3mc" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Skyfire Circlet</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/AGHII2cBTFc?list=OLAK5uy_mgUaHC2hU3RIph1ehTblI_CO32UNZ9i4U" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Wading in Hazy Light</div>
@@ -284,13 +478,11 @@
         <a class="listen" href="https://youtu.be/CKYIeYU9VNs?list=RDtELS_xdqhLM" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Dzwony Na Nieszpory</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/tELS_xdqhLM?list=OLAK5uy_l4YePCFW_2xSakmZ6MpdK9sso5GrsW9Rc" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Years of Stars</div>
@@ -298,20 +490,11 @@
         <a class="listen" href="https://youtu.be/lyK-yU4XFg4?list=OLAK5uy_m0lh32FFv3LutUDBB6cl61E_djbq0j8Zo" target="_blank">Listen on YouTube →</a>
     </div>
 
-
-    <div class="track">
-        <div class="track-title">Baur's Reach</div>
-        <div class="artist">Gareth Coker</div>
-        <a class="listen" href="https://youtu.be/GsyhwnZ1XtI?list=PLS19zOYsmnkwokOUuQC0Kw0M8HAdtWVYj" target="_blank">Listen on YouTube →</a>
-    </div>
-
-
     <div class="track">
         <div class="track-title">Morning, Planarcadia!</div>
         <div class="artist">HOYO-MiX · 汪玉珏</div>
         <a class="listen" href="https://youtu.be/zWHbQ4YWkcE?list=OLAK5uy_mazCna8G0kskmoBTMozUSAJuxzVVfOgko" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Fatum Nihil Promisit</div>
@@ -319,13 +502,11 @@
         <a class="listen" href="https://youtu.be/8lxk4XnydlE?list=RD8lxk4XnydlE" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Tomb of Blades</div>
         <div class="artist">HOYO-MiX · Alexia Evellyn · 汪玉珏</div>
         <a class="listen" href="https://youtu.be/u3IoGFpnQ9o?list=OLAK5uy_nxkWRWXXOgOZ4TguAr0s6rU9OrjrdrlNc" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">From Beyond</div>
@@ -333,13 +514,11 @@
         <a class="listen" href="https://youtu.be/nBc3YkQImcA?list=RDnBc3YkQImcA" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Homeland</div>
         <div class="artist">HOYO-MiX · 聂婉迪</div>
         <a class="listen" href="https://youtu.be/ptuw-mWkBVA?list=RDbWEVrO0mT90" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Awake From a Nightmare</div>
@@ -347,13 +526,11 @@
         <a class="listen" href="https://youtu.be/Elrnl9YdA6Q?list=RDElrnl9YdA6Q" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Remembrance of the Heart</div>
         <div class="artist">HOYO-MiX · 林一凡</div>
         <a class="listen" href="https://youtu.be/xPIb5c62C9g?list=RDo1P4ljgu4A4" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Immolation of the Heavens</div>
@@ -361,13 +538,11 @@
         <a class="listen" href="https://youtu.be/nZxCHcXotZ0?list=RDnZxCHcXotZ0" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Hidden Path Above the Savannah</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/nFcNLqS5GH4?list=RDnFcNLqS5GH4" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Beyond the Reach of Light</div>
@@ -375,13 +550,11 @@
         <a class="listen" href="https://youtu.be/ji0tUfPQIwU?list=RDji0tUfPQIwU" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Sipping in the Soft Breeze</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/STFG2-2PWAk?list=RDSTFG2-2PWAk" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Till the Night Comes</div>
@@ -389,13 +562,11 @@
         <a class="listen" href="https://youtu.be/wMNgKKpOVzA?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Svetilinicnaya Nosti</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/6si36CaH_qg?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Beacon Front</div>
@@ -403,13 +574,11 @@
         <a class="listen" href="https://youtu.be/dFrltIelObQ?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Where the Dragon Casts Its Will</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/4brIATwiKgw?list=OLAK5uy_mgUaHC2hU3RIph1ehTblI_CO32UNZ9i4U" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Seven Tabaqat of Asmoday</div>
@@ -417,13 +586,11 @@
         <a class="listen" href="https://youtu.be/UyNxpjsK5YA?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">To the Garden of Remembrance</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/SlwgPZ212xE?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Tarnished Storm</div>
@@ -431,13 +598,11 @@
         <a class="listen" href="https://youtu.be/aBXB8yvXJjo" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Elysiae Melody</div>
         <div class="artist">HOYO-MiX · 聂婉迪</div>
         <a class="listen" href="https://youtu.be/bWEVrO0mT90?list=RDbWEVrO0mT90" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Vive Hodie</div>
@@ -445,18 +610,22 @@
         <a class="listen" href="https://youtu.be/7j0xXtrCS2c?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Tempus Carpite</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/5sgV3i6-c88?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Wonderful Parinama</div>
         <div class="artist">HOYO-MiX</div>
         <a class="listen" href="https://youtu.be/GzfReLw_Dk8?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Nin-Kiggia's Message</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/ob-PHMtrSRk?list=RDob-PHMtrSRk" target="_blank">Listen on YouTube →</a>
     </div>
 
 </section>
@@ -466,12 +635,10 @@
 <!-- SCOTT BUCKLEY -->
 <!-- ================================================= -->
 
-<section class="category">
+<section class="category" id="scott-buckley">
 
     <h2 class="category-title">Scott Buckley</h2>
-
-    <div class="category-line"></div>
-
+    <div class="category-line">◇</div>
 
     <div class="track">
         <div class="track-title">Titan</div>
@@ -479,13 +646,11 @@
         <a class="listen" href="https://youtu.be/vtu8f2dKriY?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Sanctuary</div>
         <div class="artist">Scott Buckley · CC BY 4.0</div>
         <a class="listen" href="https://youtu.be/OgeKXriwMnA" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Chasing Daylight</div>
@@ -493,13 +658,11 @@
         <a class="listen" href="https://youtu.be/msnp0pmvJQQ?list=RDmsnp0pmvJQQ" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Passage of Time</div>
         <div class="artist">Scott Buckley · CC BY 4.0</div>
         <a class="listen" href="https://youtu.be/55DFaKhVwvc?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">The Exodus</div>
@@ -507,13 +670,11 @@
         <a class="listen" href="https://youtu.be/vIxo9HfA-24?list=PL4EJWCM_RXBHLZ34wkZWw-SocdJvbKXhy" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">The Great Sea</div>
         <div class="artist">Scott Buckley · CC BY 4.0</div>
         <a class="listen" href="https://youtu.be/hzb9DsLguJo?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Light in Dark Places</div>
@@ -521,13 +682,11 @@
         <a class="listen" href="https://youtu.be/7Y2C-A-aUwI?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">With These Hands</div>
         <div class="artist">Scott Buckley · CC BY 4.0</div>
         <a class="listen" href="https://youtu.be/yXyPtNTVWKc?list=RDmsnp0pmvJQQ" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Artemis</div>
@@ -535,13 +694,11 @@
         <a class="listen" href="https://youtu.be/vqb0XsZ04Og?list=PL4EJWCM_RXBF5euXTlzhUgUsmnnZHsocG" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Ascension</div>
         <div class="artist">Scott Buckley · CC BY 4.0</div>
         <a class="listen" href="https://youtu.be/fMx5roxJ7Uk?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Golden Hour</div>
@@ -549,13 +706,11 @@
         <a class="listen" href="https://youtu.be/CdYjmA2gc-w?list=PL4EJWCM_RXBF5euXTlzhUgUsmnnZHsocG" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Affirmations</div>
         <div class="artist">Scott Buckley · CC BY 4.0</div>
         <a class="listen" href="https://youtu.be/wyfX0QR71-Y?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">Beyond These Walls</div>
@@ -570,12 +725,10 @@
 <!-- SHOI MIYAZAWA -->
 <!-- ================================================= -->
 
-<section class="category">
+<section class="category" id="shoi-miyazawa">
 
     <h2 class="category-title">Shoi Miyazawa</h2>
-
-    <div class="category-line"></div>
-
+    <div class="category-line">◇</div>
 
     <div class="track">
         <div class="track-title">Starscourge Radahn</div>
@@ -583,13 +736,11 @@
         <a class="listen" href="https://youtu.be/Z1ts4FP1WWM?list=RDZ1ts4FP1WWM" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">The Promised Consort</div>
         <div class="artist">Shoi Miyazawa</div>
         <a class="listen" href="https://youtu.be/OK5ObZ_vXsU?list=RDOK5ObZ_vXsU" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
         <div class="track-title">The Shrouded Roundtable Hold</div>
@@ -601,36 +752,37 @@
 
 
 <!-- ================================================= -->
-<!-- OTHER GAME & FILM MUSIC -->
+<!-- HOLLOW KNIGHT -->
 <!-- ================================================= -->
 
-<section class="category">
+<section class="category" id="hollow-knight">
 
-    <h2 class="category-title">Other Game &amp; Film Music</h2>
-
-    <div class="category-line"></div>
-
+    <h2 class="category-title">Hollow Knight</h2>
+    <div class="category-line">◇</div>
 
     <div class="track">
-        <div class="track-title">A Fleeting Moment</div>
-        <div class="artist">Wuthering Waves · Minase</div>
-        <a class="listen" href="https://youtu.be/WkTylNNRehA?list=OLAK5uy_nxQ7uEJRCU_pe-LVsH_9Uj3JhgKWOLDls" target="_blank">Listen on YouTube →</a>
+        <div class="track-title">City of Tears</div>
+        <div class="artist">Hollow Knight OST</div>
+        <a class="listen" href="https://youtu.be/MJDn70jh1V0?list=RDMJDn70jh1V0" target="_blank">Listen on YouTube →</a>
     </div>
-
 
     <div class="track">
-        <div class="track-title">Fly Me To The Moon - Lofi Jazz Beat</div>
-        <div class="artist">—</div>
-        <a class="listen" href="https://youtu.be/68I8ZLINCLM?list=RD68I8ZLINCLM" target="_blank">Listen on YouTube →</a>
+        <div class="track-title">Soul Sanctum</div>
+        <div class="artist">Hollow Knight OST</div>
+        <a class="listen" href="https://youtu.be/pvpCX9qtyZE?list=RDpvpCX9qtyZE" target="_blank">Listen on YouTube →</a>
     </div>
 
+</section>
 
-    <div class="track">
-        <div class="track-title">Beyond Teyvat</div>
-        <div class="artist">—</div>
-        <a class="listen" href="https://youtu.be/LiXaM1oRNio?list=RDLiXaM1oRNio" target="_blank">Listen on YouTube →</a>
-    </div>
 
+<!-- ================================================= -->
+<!-- ORI -->
+<!-- ================================================= -->
+
+<section class="category" id="ori">
+
+    <h2 class="category-title">Ori and the Will of the Wisps</h2>
+    <div class="category-line">◇</div>
 
     <div class="track">
         <div class="track-title">Baur's Reach</div>
@@ -638,6 +790,41 @@
         <a class="listen" href="https://youtu.be/GsyhwnZ1XtI?list=PLS19zOYsmnkwokOUuQC0Kw0M8HAdtWVYj" target="_blank">Listen on YouTube →</a>
     </div>
 
+    <div class="track">
+        <div class="track-title">Ori, Embracing the Light</div>
+        <div class="artist">Gareth Coker</div>
+        <a class="listen" href="https://youtu.be/mwrIvHe6Yvo?list=RDmwrIvHe6Yvo" target="_blank">Listen on YouTube →</a>
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- OTHER -->
+<!-- ================================================= -->
+
+<section class="category" id="other">
+
+    <h2 class="category-title">Other Game &amp; Film Music</h2>
+    <div class="category-line">◇</div>
+
+    <div class="track">
+        <div class="track-title">A Fleeting Moment</div>
+        <div class="artist">Wuthering Waves · Minase</div>
+        <a class="listen" href="https://youtu.be/WkTylNNRehA?list=OLAK5uy_nxQ7uEJRCU_pe-LVsH_9Uj3JhgKWOLDls" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Fly Me To The Moon - Lofi Jazz Beat</div>
+        <div class="artist">—</div>
+        <a class="listen" href="https://youtu.be/68I8ZLINCLM?list=RD68I8ZLINCLM" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Beyond Teyvat</div>
+        <div class="artist">—</div>
+        <a class="listen" href="https://youtu.be/LiXaM1oRNio?list=RDLiXaM1oRNio" target="_blank">Listen on YouTube →</a>
+    </div>
 
     <div class="track">
         <div class="track-title">With You Once More (Short Version)</div>
@@ -645,34 +832,11 @@
         <a class="listen" href="https://youtu.be/o1P4ljgu4A4?list=RDo1P4ljgu4A4" target="_blank">Listen on YouTube →</a>
     </div>
 
-
     <div class="track">
         <div class="track-title">Starlight Echo</div>
         <div class="artist">Coronal Radiance</div>
         <a class="listen" href="https://youtu.be/kp9IweDEQz8?list=PLf9L5TXmplp1T-spo5TdVEhcXPFJsYteL" target="_blank">Listen on YouTube →</a>
     </div>
-
-
-    <div class="track">
-        <div class="track-title">Gladsome Ramble - Vocal Theme</div>
-        <div class="artist">—</div>
-        <a class="listen" href="https://youtu.be/uXt7LvOjMEk?list=RDuXt7LvOjMEk" target="_blank">Listen on YouTube →</a>
-    </div>
-
-
-    <div class="track">
-        <div class="track-title">Hollow Knight OST - City of Tears</div>
-        <div class="artist">Hollow Knight</div>
-        <a class="listen" href="https://youtu.be/MJDn70jh1V0?list=RDMJDn70jh1V0" target="_blank">Listen on YouTube →</a>
-    </div>
-
-
-    <div class="track">
-        <div class="track-title">Hollow Knight OST - Soul Sanctum</div>
-        <div class="artist">Hollow Knight</div>
-        <a class="listen" href="https://youtu.be/pvpCX9qtyZE?list=RDpvpCX9qtyZE" target="_blank">Listen on YouTube →</a>
-    </div>
-
 
     <div class="track">
         <div class="track-title">Echt of sorrow</div>
@@ -684,12 +848,27 @@
 
 
 <!-- ================================================= -->
+<!-- RETURN TO TOP -->
+<!-- ================================================= -->
+
+<a href="#top" class="back-top">
+    ↑ &nbsp; Return to Top
+</a>
+
+
+<!-- ================================================= -->
 <!-- FOOTER -->
 <!-- ================================================= -->
 
 <footer>
 
-    Complete music archive for<br><br>
+    <div class="ornament">
+        ◇ ◆ ◇
+    </div>
+
+    Complete music archive for
+
+    <br><br>
 
     <strong>
         On the Origins of the First Descender
@@ -699,9 +878,7 @@
 
 
 </div>
-
 </div>
-
 </div>
 
 </body>
