@@ -3,71 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Music Credits — On the Origins of the First Descender</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            background: #111111;
-            color: #eeeeee;
+            background: #0b0b0f;
+            color: #e8e8e8;
             font-family: Georgia, "Times New Roman", serif;
             line-height: 1.6;
         }
 
         .container {
             max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 25px;
+            margin: auto;
+            padding: 70px 25px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 65px;
+        }
+
+        .eyebrow {
+            color: #a99b78;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: clamp(2rem, 5vw, 3.2rem);
             font-weight: normal;
+            line-height: 1.2;
+            margin: 0 0 15px 0;
         }
 
         .subtitle {
-            color: #aaaaaa;
-            font-size: 1.1em;
+            color: #999;
+            font-size: 1.15rem;
+        }
+
+        .intro {
+            max-width: 700px;
+            margin: 0 auto 55px auto;
+            text-align: center;
+            color: #aaa;
         }
 
         .track {
             padding: 22px 0;
-            border-bottom: 1px solid #333333;
+            border-bottom: 1px solid #29292f;
+        }
+
+        .track:first-child {
+            border-top: 1px solid #29292f;
         }
 
         .track-title {
-            font-size: 1.2em;
+            font-size: 1.18rem;
             font-weight: bold;
-            margin-bottom: 4px;
+            color: #f0f0f0;
         }
 
         .artist {
-            color: #aaaaaa;
-            margin-bottom: 10px;
+            color: #999;
+            margin: 3px 0 10px 0;
+            font-size: 0.98rem;
         }
 
-        a {
-            color: #d6b36a;
+        .listen {
+            display: inline-block;
+            color: #c8b477;
             text-decoration: none;
+            font-size: 0.92rem;
+            transition: opacity 0.2s;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .listen:hover {
+            opacity: 0.7;
         }
 
         footer {
-            margin-top: 60px;
-            padding-top: 25px;
-            border-top: 1px solid #333333;
+            margin-top: 70px;
+            padding-top: 30px;
+            border-top: 1px solid #29292f;
             text-align: center;
-            color: #777777;
-            font-size: 0.9em;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 45px 20px;
+            }
+
+            header {
+                margin-bottom: 45px;
+            }
+
+            .track {
+                padding: 19px 0;
+            }
         }
     </style>
 </head>
@@ -77,38 +120,367 @@
 <div class="container">
 
     <header>
+        <div class="eyebrow">Music Archive</div>
+
         <h1>On the Origins of the First Descender</h1>
-        <div class="subtitle">Complete Music Credits</div>
+
+        <div class="subtitle">
+            Complete Music Credits
+        </div>
     </header>
+
+    <div class="intro">
+        This page contains the complete list of music used throughout
+        the Lore Movie, including tracks that do not require attribution.
+    </div>
+
 
     <div class="track">
         <div class="track-title">Flawless Ichor</div>
         <div class="artist">HOYO-MiX · 温菁</div>
-        <a href="https://youtu.be/-b6RXRYZBLw?list=RD-b6RXRYZBLw" target="_blank">Listen on YouTube →</a>
+        <a class="listen" href="https://youtu.be/-b6RXRYZBLw?list=RD-b6RXRYZBLw" target="_blank">Listen on YouTube →</a>
     </div>
 
     <div class="track">
         <div class="track-title">Starscourge Radahn</div>
         <div class="artist">Shoi Miyazawa · Shoi Miyazawa</div>
-        <a href="https://youtu.be/Z1ts4FP1WWM?list=RDZ1ts4FP1WWM" target="_blank">Listen on YouTube →</a>
+        <a class="listen" href="https://youtu.be/Z1ts4FP1WWM?list=RDZ1ts4FP1WWM" target="_blank">Listen on YouTube →</a>
     </div>
 
     <div class="track">
         <div class="track-title">The Promised Consort</div>
         <div class="artist">Shoi Miyazawa · Shoi Miyazawa</div>
-        <a href="https://youtu.be/OK5ObZ_vXsU?list=RDOK5ObZ_vXsU" target="_blank">Listen on YouTube →</a>
+        <a class="listen" href="https://youtu.be/OK5ObZ_vXsU?list=RDOK5ObZ_vXsU" target="_blank">Listen on YouTube →</a>
     </div>
 
     <div class="track">
         <div class="track-title">A Fleeting Moment</div>
         <div class="artist">Wuthering Waves · Minase</div>
-        <a href="https://youtu.be/WkTylNNRehA?list=OLAK5uy_nxQ7uEJRCU_pe-LVsH_9Uj3JhgKWOLDls" target="_blank">Listen on YouTube →</a>
+        <a class="listen" href="https://youtu.be/WkTylNNRehA?list=OLAK5uy_nxQ7uEJRCU_pe-LVsH_9Uj3JhgKWOLDls" target="_blank">Listen on YouTube →</a>
     </div>
 
-    <!-- The remaining tracks will go here -->
+    <div class="track">
+        <div class="track-title">Sorrows Calmed</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/3jcZqKS-UQ4?list=OLAK5uy_l4YePCFW_2xSakmZ6MpdK9sso5GrsW9Rc" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Fly Me To The Moon - Lofi Jazz Beat</div>
+        <div class="artist">—</div>
+        <a class="listen" href="https://youtu.be/68I8ZLINCLM?list=RD68I8ZLINCLM" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Nameless Faces (Instrumental)</div>
+        <div class="artist">HOYO-MiX · 王可鑫</div>
+        <a class="listen" href="https://youtu.be/Fkf6a9raDJI?list=RDFkf6a9raDJI" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Beyond Teyvat</div>
+        <div class="artist">—</div>
+        <a class="listen" href="https://youtu.be/LiXaM1oRNio?list=RDLiXaM1oRNio" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">The Shrouded Roundtable Hold</div>
+        <div class="artist">Shoi Miyazawa · Shoi Miyazawa</div>
+        <a class="listen" href="https://youtu.be/rJKXX6bDFF4" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Titan</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/vtu8f2dKriY?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Sanctuary</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/OgeKXriwMnA" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Chasing Daylight</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/msnp0pmvJQQ?list=RDmsnp0pmvJQQ" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Passage of Time</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/55DFaKhVwvc?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">The Exodus</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/vIxo9HfA-24?list=PL4EJWCM_RXBHLZ34wkZWw-SocdJvbKXhy" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">The Great Sea</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/hzb9DsLguJo?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Light in Dark Places</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/7Y2C-A-aUwI?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">With These Hands</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/yXyPtNTVWKc?list=RDmsnp0pmvJQQ" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Artemis</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/vqb0XsZ04Og?list=PL4EJWCM_RXBF5euXTlzhUgUsmnnZHsocG" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Ascension</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/fMx5roxJ7Uk?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Golden Hour</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/CdYjmA2gc-w?list=PL4EJWCM_RXBF5euXTlzhUgUsmnnZHsocG" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Affirmations</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/wyfX0QR71-Y?list=PL4EJWCM_RXBHad4pVU1pNYFNXTAgy_crx" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Beyond These Walls</div>
+        <div class="artist">Scott Buckley · CC BY 4.0</div>
+        <a class="listen" href="https://youtu.be/SsdeY3ogK-g?list=RDdBrnOLPaDUs" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">A Dream Within a Dream</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/FFjJLrxxf8Q?list=OLAK5uy_lfYJPCp4k-rGN2QekLqLE1L5HkKerEFCM" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Crescent Gildeth the Dark</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/MQXYgjjYctE?list=OLAK5uy_lfYJPCp4k-rGN2QekLqLE1L5HkKerEFCM" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">The Looming Curtains</div>
+        <div class="artist">HOYO-MiX · 汪玉珏</div>
+        <a class="listen" href="https://youtu.be/slni3RrdbC8?list=OLAK5uy_nxkWRWXXOgOZ4TguAr0s6rU9OrjrdrlNc" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">The Realm of Tokoyo</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/biPnQ11tHAs?list=OLAK5uy_mf8R0L8phKCeJ7Bl7XsXcMTOfKaceJ3mc" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Skyfire Circlet</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/AGHII2cBTFc?list=OLAK5uy_mgUaHC2hU3RIph1ehTblI_CO32UNZ9i4U" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Wading in Hazy Light</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/CKYIeYU9VNs?list=RDtELS_xdqhLM" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Dzwony Na Nieszpory</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/tELS_xdqhLM?list=OLAK5uy_l4YePCFW_2xSakmZ6MpdK9sso5GrsW9Rc" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Years of Stars</div>
+        <div class="artist">Sān-Z · HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/lyK-yU4XFg4?list=OLAK5uy_m0lh32FFv3LutUDBB6cl61E_djbq0j8Zo" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Baur's Reach</div>
+        <div class="artist">Gareth Coker</div>
+        <a class="listen" href="https://youtu.be/GsyhwnZ1XtI?list=PLS19zOYsmnkwokOUuQC0Kw0M8HAdtWVYj" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Temple of Space: Pillar Hall of Space Theme</div>
+        <div class="artist">—</div>
+        <a class="listen" href="https://youtu.be/gza0NRzu8nk?list=RDgza0NRzu8nk" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Morning, Planarcadia!</div>
+        <div class="artist">HOYO-MiX · 汪玉珏</div>
+        <a class="listen" href="https://youtu.be/zWHbQ4YWkcE?list=OLAK5uy_mazCna8G0kskmoBTMozUSAJuxzVVfOgko" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Fatum Nihil Promisit</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://open.spotify.com/track/3XKHGmbn5IwnrHn2mfCgmt?si=62be0a2111a694d28" target="_blank">Listen on Spotify →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Tomb of Blades</div>
+        <div class="artist">HOYO-MiX · Alexia Evellyn · 汪玉珏</div>
+        <a class="listen" href="https://youtu.be/u3IoGFpnQ9o?list=OLAK5uy_nxkWRWXXOgOZ4TguAr0s6rU9OrjrdrlNc" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">With You Once More (Short Version)</div>
+        <div class="artist">—</div>
+        <a class="listen" href="https://youtu.be/o1P4ljgu4A4?list=RDo1P4ljgu4A4" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Starlight Echo</div>
+        <div class="artist">Coronal Radiance</div>
+        <a class="listen" href="https://youtu.be/kp9IweDEQz8?list=PLf9L5TXmplp1T-spo5TdVEhcXPFJsYteL" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">From Beyond</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/nBc3YkQImcA?list=RDnBc3YkQImcA" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Homeland</div>
+        <div class="artist">HOYO-MiX · 聂婉迪</div>
+        <a class="listen" href="https://youtu.be/ptuw-mWkBVA?list=RDbWEVrO0mT90" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Awake From a Nightmare</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/Elrnl9YdA6Q?list=RDElrnl9YdA6Q" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Remembrance of the Heart</div>
+        <div class="artist">HOYO-MiX · 林一凡</div>
+        <a class="listen" href="https://youtu.be/xPIb5c62C9g?list=RDo1P4ljgu4A4" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Immolation of the Heavens</div>
+        <div class="artist">HOYO-MiX · 汪玉珏</div>
+        <a class="listen" href="https://youtu.be/nZxCHcXotZ0?list=RDnZxCHcXotZ0" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Hidden Path Above the Savannah</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/nFcNLqS5GH4?list=RDnFcNLqS5GH4" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Gladsome Ramble - Vocal Theme</div>
+        <div class="artist">—</div>
+        <a class="listen" href="https://youtu.be/uXt7LvOjMEk?list=RDuXt7LvOjMEk" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Hollow Knight OST - City of Tears</div>
+        <div class="artist">—</div>
+        <a class="listen" href="https://youtu.be/MJDn70jh1V0?list=RDMJDn70jh1V0" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Hollow Knight OST - Soul Sanctum</div>
+        <div class="artist">—</div>
+        <a class="listen" href="https://youtu.be/pvpCX9qtyZE?list=RDpvpCX9qtyZE" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Beyond the Reach of Light</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/ji0tUfPQIwU?list=RDji0tUfPQIwU" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Sipping in the Soft Breeze</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/STFG2-2PWAk?list=RDSTFG2-2PWAk" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Till the Night Comes</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/wMNgKKpOVzA?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Svetilinicnaya Nosti</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/6si36CaH_qg?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Beacon Front</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/dFrltIelObQ?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Where the Dragon Casts Its Will</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/4brIATwiKgw?list=OLAK5uy_mgUaHC2hU3RIph1ehTblI_CO32UNZ9i4U" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Seven Tabaqat of Asmoday</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/UyNxpjsK5YA?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">To the Garden of Remembrance</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/SlwgPZ212xE?list=OLAK5uy_moB92jOW2G4m9ogjxkWEnDFQSFHiTVre0" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Echt of sorrow</div>
+        <div class="artist">Kenichiro Suehiro</div>
+        <a class="listen" href="https://youtu.be/80MDVw0i6mc?list=RD80MDVw0i6mc" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Tarnished Storm</div>
+        <div class="artist">HOYO-MiX</div>
+        <a class="listen" href="https://youtu.be/aBXB8yvXJjo" target="_blank">Listen on YouTube →</a>
+    </div>
+
+    <div class="track">
+        <div class="track-title">Elysiae Melody</div>
+        <div class="artist">HOYO-MiX · 聂婉迪</div>
+        <a class="listen" href="https://youtu.be/bWEVrO0mT90?list=RDbWEVrO0mT90" target="_blank">Listen on YouTube →</a>
+    </div>
+
 
     <footer>
-        Music used in the Lore Movie "On the Origins of the First Descender".
+        Complete music archive for<br>
+        <strong>On the Origins of the First Descender</strong>
     </footer>
 
 </div>
